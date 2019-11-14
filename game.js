@@ -19,11 +19,17 @@ class Unit {
     if (item.type != 'hand') {
       this.equipment[item.type] = item
     } else {
-      if (!this.equipment.rHand === null) {
+      if (item.dual) {
+        this.equipment.rHand = item
+        this.equipment.lHand = item
+        return `${item.name} has been equipped in both of your hands! Lucky!`
+      }
+      if (!this.equipment.rHand) {
         this.equipment.rHand = item
     } else {
         this.equipment.lHand = item
     }
+  }
     return  `${item.name} has been equipped, Ready for Battle!`
   }
 

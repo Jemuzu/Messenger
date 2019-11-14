@@ -5,10 +5,11 @@ this.name = name
   this.hp = 0
   this.atk = 0
   this.def = 0
-  this.dual = false
+  this.dual = dual
   }
 }
 
+let excalibur = new Equipment('Excalibur', 'hand', true)
 let broadsword = new Equipment('Broadsword', 'hand')
 let shield = new Equipment('Summons', 'hand')
 let chainMail = new Equipment('Chain Mail', 'armor')
