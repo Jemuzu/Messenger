@@ -6,6 +6,29 @@ class Unit {
     this.mag = 5
     this.job = "Squire"
     this.alive = true
+    this.equipment = {
+    rHand: null,
+    lHand: null,
+    helmet: null,
+    armor: null,
+    accessory: null,
+    }
+}
+
+  equipItem(item) {
+    if (item.type != 'hand') {
+      this.equipment[item.type] = item
+    } else {
+      if (!this.equipment.rHand === null) {
+        this.equipment.rHand = item
+    } else {
+        this.equipment.lHand = item
+    }
+    return  `${item.name} has been equipped, Ready for Battle!`
+  }
+
+  rHand() {
+    return this.equipment.rHand
   }
 
   attack(target) {
@@ -60,3 +83,5 @@ class Mage extends Unit {
 let james = new Knight('James')
 let joker = new Squire('Joker')
 let robin = new Mage('Robin')
+//Truthy/Falsy
+//The only thing that would evaluate to false would be undefined and null.
